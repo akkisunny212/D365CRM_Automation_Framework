@@ -1,13 +1,17 @@
-from playwright.sync_api import Page
-from config.locators import SERVICES_LOCATORS
+from playwright.async_api import Page
+from config.services_locators import SERVICES_PAGE
 from config.urls import URLS
-from .base_page import BasePage
 
-class ServicesPage(BasePage):
-    def submit_request(self):
-        self.navigate(URLS['services'])
-        self.fill(SERVICES_LOCATORS['service_input'], 'Test Service')
-        self.click(SERVICES_LOCATORS['submit_button'])
+class ServicesPage:
+    def __init__(self, page: Page):
+        self.page = page
 
-    def is_request_submitted(self):
-        return self.page.is_visible('text=Request submitted')
+    async def navigate_to_services(self):
+        await self.page.goto(URLS['services'])
+
+    async def submit_service(self, service_name):
+        await self.page.fill(SERVICES_PAGE['service_input'], service_name)
+        await self.page.click(SERVICES_PAGE['submit_button'])
+
+    async def is_request_submitted(self):
+        return await self.page.is_visible(SERVICES_PAGE['success_message'])

@@ -1,3 +1,4 @@
+@smoke
 Feature: Sales Module
   Scenario: Create a new lead
     Given I am logged in

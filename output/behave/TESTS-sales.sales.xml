@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time="0" tests='1' skipped='0'
+name="Salessales" failures='0' errors='0'><testcase time="0" name="Create_A_New_Lead" status="error"
+         classname="Sales_Module"><failure type="Unknownexception" message="Unknown error">
+                        <![CDATA[ Failing step: given I am logged in ... Status.undefined in 0.0s  Location:Featuressalessales.Feature
+                         
+                        ]]>
+                    </failure><failure type="Unknownexception" message="Unknown error">
+                        <![CDATA[ Failing step: when I create a new lead ... Status.undefined in 0.0s  Location:Featuressalessales.Feature
+                         
+                        ]]>
+                    </failure><failure type="Unknownexception" message="Unknown error">
+                        <![CDATA[ Failing step: then the lead should be saved successfully ... Status.undefined in 0.0s  Location:Featuressalessales.Feature
+                         
+                        ]]>
+                    </failure><system-out>
+            <![CDATA[
+            @scenario.begin
+                @smoke
+                scenario: Create a new lead
+                given I am logged in ... Status.undefined in 0.0s 
+                when I create a new lead ... Status.undefined in 0.0s 
+                then the lead should be saved successfully ... Status.undefined in 0.0s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase></testsuite>
