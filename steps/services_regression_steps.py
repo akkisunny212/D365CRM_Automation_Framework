@@ -4,12 +4,13 @@ from pages.services_page import ServicesPage
 
 @given('I am logged in')
 def step_login(context):
-    LoginPage(context.page).login()
+    login_page = LoginPage(context.page)
+    context.page.loop.run_until_complete(login_page.login())
 
 @when('I submit a new service request with name "Regression Service"')
 def step_submit_service(context):
     services_page = ServicesPage(context.page)
-    context.result = context.page.loop.run_until_complete(services_page.submit_service('Regression Service'))
+    context.page.loop.run_until_complete(services_page.submit_service('Regression Service'))
 
 @then('the request should be submitted successfully')
 def step_request_submitted(context):

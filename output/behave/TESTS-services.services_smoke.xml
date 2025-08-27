@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time="0" tests='1' skipped='0'
+name="Servicesservices_Smoke" failures='0' errors='0'><testcase time="0" name="Quick_Service_Request_Submission_(Smoke)" status="error"
+         classname="Services_Smoke"><failure type="Unknownexception" message="Unknown error">
+                        <![CDATA[ Failing step: given I am logged in ... Status.undefined in 0.0s  Location:Featuresservicesservices_Smoke.Feature
+                         
+                        ]]>
+                    </failure><failure type="Unknownexception" message="Unknown error">
+                        <![CDATA[ Failing step: when I submit a new service request with name "Smoke Service" ... Status.undefined in 0.0s  Location:Featuresservicesservices_Smoke.Feature
+                         
+                        ]]>
+                    </failure><failure type="Unknownexception" message="Unknown error">
+                        <![CDATA[ Failing step: then the request should be submitted successfully ... Status.undefined in 0.0s  Location:Featuresservicesservices_Smoke.Feature
+                         
+                        ]]>
+                    </failure><system-out>
+            <![CDATA[
+            @scenario.begin
+                @smoke
+                scenario: Quick service request submission (smoke)
+                given I am logged in ... Status.undefined in 0.0s 
+                when I submit a new service request with name "Smoke Service" ... Status.undefined in 0.0s 
+                then the request should be submitted successfully ... Status.undefined in 0.0s 
+@scenario.end
+            ----------------------------------------------------------------------------------------------------
+            ]]>
+            </system-out>
+        </testcase></testsuite>

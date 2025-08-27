@@ -1,1 +1,1 @@
-features/sales/sales.feature:3
+features/sales/sales.feature:3,features/services/services_smoke.feature:3
