@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.async_api import Page
 from config.urls import URLS
 import os
 from dotenv import load_dotenv
@@ -9,8 +9,8 @@ class LoginPage:
     def __init__(self, page: Page):
         self.page = page
 
-    def login(self):
-        self.page.goto(URLS['login'])
-        self.page.fill('input[name="username"]', os.getenv('CRM_USERNAME'))
-        self.page.fill('input[name="password"]', os.getenv('CRM_PASSWORD'))
-        self.page.click('button#login')
+    async def login(self):
+        await self.page.goto(URLS['login'])
+        await self.page.fill('input[name="username"]', os.getenv('CRM_USERNAME'))
+        await self.page.fill('input[name="password"]', os.getenv('CRM_PASSWORD'))
+        await self.page.click('button#login')

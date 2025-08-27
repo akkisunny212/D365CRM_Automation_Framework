@@ -1,0 +1,16 @@
+@smoke
+Feature: Sales Module # features/sales/sales.feature:2
+
+  Scenario: Create a new lead                  # features/sales/sales.feature:3
+    Given I am logged in                       # None
+    When I create a new lead                   # None
+    Then the lead should be saved successfully # None
+
+@smoke
+Feature: Services Smoke # features/services/services_smoke.feature:2
+
+  Scenario: Quick service request submission (smoke)              # features/services/services_smoke.feature:3
+    Given I am logged in                                          # None
+    When I submit a new service request with name "Smoke Service" # None
+    Then the request should be submitted successfully             # None
+

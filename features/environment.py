@@ -1,11 +1,15 @@
-from playwright.sync_api import sync_playwright
+import asyncio
+from playwright.async_api import async_playwright
 
 def before_all(context):
-    context.playwright = sync_playwright().start()
-    context.browser = context.playwright.chromium.launch(headless=True)
-    context.page = context.browser.new_page()
+    loop = asyncio.get_event_loop()
+    context.playwright = loop.run_until_complete(async_playwright().start())
+    context.browser = loop.run_until_complete(context.playwright.chromium.launch(headless=True))
+    context.page = loop.run_until_complete(context.browser.new_page())
+    context.page.loop = loop
 
 def after_all(context):
-    context.page.close()
-    context.browser.close()
-    context.playwright.stop()
+    loop = context.page.loop
+    loop.run_until_complete(context.page.close())
+    loop.run_until_complete(context.browser.close())
+    loop.run_until_complete(context.playwright.stop())
